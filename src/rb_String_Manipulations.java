@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class rb_String_Manipulations
 {
@@ -14,7 +15,7 @@ public class rb_String_Manipulations
 		String[] words;
 		
 		//	splitting the words by spaces
-		words = input.split(" ");
+		words = input.split(" |,|\\.|!|\\?");
 		
 		//	Label for breaking out of FOR loop 
 		outLoop:
@@ -23,42 +24,69 @@ public class rb_String_Manipulations
 			//	Switch statement where each case is a potential word to trigger a response code
 			switch(words[i].toUpperCase())
 			{
+				case "NOT":
+				{
+					switch(words[i + 1].toUpperCase())
+					{
+						case "SO":
+						{
+							switch(words[i + 2].toUpperCase())
+							{
+								case "GOOD":
+								{
+									System.out.printf("NOT SO GOOD\n");
+									code = -1;
+									break outLoop;
+								}
+								case "GREAT":
+								{
+									System.out.printf("NOT SO GREAT\n");
+									code = -2;
+									break outLoop;
+								}
+							}
+							break;
+						}
+						case "GOOD":
+						{
+							System.out.printf("NOT GOOD\n");
+							code = -1;
+							break outLoop;
+						}
+						case "GREAT":
+						{
+							System.out.printf("NOT GREAT\n");
+							code = -2;
+							break outLoop;
+						}
+						case "OK":
+						{
+							System.out.printf("NOT OK\n");
+							code = -3;
+							break outLoop;
+						}
+						case "OKAY":
+						{
+							System.out.printf("NOT OKAY\n");
+							code = -3;
+							break outLoop;
+						}
+						case "BAD":
+						{
+							System.out.printf("NOT BAD\n");
+							code = 4;
+							break outLoop;
+						}
+					}
+					break;
+				}
 				case "GOOD":
 				{
-					code = 1;
-					break outLoop;
-				}
-				case "GOOD,":
-				{
-					code = 1;
-					break outLoop;
-				}
-				case "GOOD.":
-				{
-					code = 1;
-					break outLoop;
-				}
-				case "GOOD!":
-				{
+					System.out.print("Booga booga booga\n");
 					code = 1;
 					break outLoop;
 				}
 				case "GREAT":
-				{
-					code = 2;
-					break outLoop;
-				}
-				case "GREAT,":
-				{
-					code = 2;
-					break outLoop;
-				}
-				case "GREAT.":
-				{
-					code = 2;
-					break outLoop;
-				}
-				case "GREAT!":
 				{
 					code = 2;
 					break outLoop;
@@ -68,138 +96,34 @@ public class rb_String_Manipulations
 					code = 3;
 					break outLoop;
 				}
-				case "OK;":
-				{
-					code = 3;
-					break outLoop;
-				}case "OK.":
-				{
-					code = 3;
-					break outLoop;
-				}
-				case "OK!":
-				{
-					code = 3;
-					break outLoop;
-				}
 				case "OKAY":
-				{
-					code = 3;
-					break outLoop;
-				}
-				case "OKAY,":
-				{
-					code = 3;
-					break outLoop;
-				}
-				case "OKAY.":
-				{
-					code = 3;
-					break outLoop;
-				}
-				case "OKAY!":
 				{
 					code = 3;
 					break outLoop;
 				}
 				case "BAD":
 				{
-					code = -1;
-					break outLoop;
-				}
-				case "BAD,":
-				{
-					code = -1;
-					break outLoop;
-				}
-				case "BAD.":
-				{
-					code = -1;
-					break outLoop;
-				}
-				case "BAD!":
-				{
-					code = -1;
+					code = -4;
 					break outLoop;
 				}
 				case "POOR":
 				{
-					code = -2;
-					break outLoop;
-				}
-				case "POOR,":
-				{
-					code = -2;
-					break outLoop;
-				}
-				case "POOR.":
-				{
-					code = -2;
-					break outLoop;
-				}
-				case "POOR!":
-				{
-					code = -2;
+					code = -5;
 					break outLoop;
 				}
 				case "POORLY":
 				{
-					code = -2;
-					break outLoop;
-				}
-				case "POORLY,":
-				{
-					code = -2;
-					break outLoop;
-				}
-				case "POORLY.":
-				{
-					code = -2;
-					break outLoop;
-				}
-				case "POORLY!":
-				{
-					code = -2;
+					code = -5;
 					break outLoop;
 				}
 				case "SAD":
 				{
-					code = -3;
-					break outLoop;
-				}
-				case "SAD,":
-				{
-					code = -3;
-					break outLoop;
-				}
-				case "SAD.":
-				{
-					code = -3;
-					break outLoop;
-				}
-				case "SAD!":
-				{
-					code = -3;
+					code = -6;
 					break outLoop;
 				}
 				case "MEH":
 				{
-					code = -4;
-					break outLoop;
-				}
-				case "MEH,":
-				{
-					code = -4;
-					break outLoop;
-				}
-				case "MEH.":
-				{
-					code = -4;
-					break outLoop;
-				}
-				case "MEH!":
-				{
-					code = -4;
+					code = -7;
 					break outLoop;
 				}
 				default:
@@ -208,6 +132,26 @@ public class rb_String_Manipulations
 					break;
 				}
 			}
+		}
+		
+		return code;
+	}
+	
+	/**
+	 * Private function that prompts the user to end the program
+	 * @param code
+	 * @return the response codeIO go
+	 */
+	public int cont(int code)
+	{
+		String cont;
+		Scanner in = new Scanner(System.in);
+		System.out.print("Do you want to continue? (yes or no)\n");
+		cont = in.next();
+		
+		if(cont.toUpperCase().contains("NO"))
+		{
+			code = -100;
 		}
 		
 		return code;
