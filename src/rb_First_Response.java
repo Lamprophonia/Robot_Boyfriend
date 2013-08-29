@@ -18,6 +18,8 @@ public class rb_First_Response
 		 * 	potential responses to be selected at random, based on the response code
 		 * 	given by the main class.
 		 */
+		
+		//	"GOOD"
 		String[] listCode1 =
 			{
 				"Input recieved.  I am glad that you are good.  I am good as well.",
@@ -26,30 +28,66 @@ public class rb_First_Response
 				"Good is less than great, but greater than 'meh'.",
 				"Computing your condition... you have entered 'good'."
 			};
+		//	"GREAT"
 		String[] listCode2 =
 			{
-				"Test code 2 - 1",
-				"Test code 2 - 2",
-				"Test code 2 - 3" 
+				"Input recieved.  You are great!  That is good.",
+				"Great great, or great like Tony the Tiger?  Grrrrrrrrrrrrreat!",
+				"Input recieved, calculating status of 'great'... this is a good thing.",
+				"Input recieved.  There was a man named Alexander once.  He was also great."
 			};
+		//	"OK" or "OKAY"
 		String[] listCode3 =
 			{
-				"Test code 3.1",
-				"Test code 3.2",
-				"Test code 3.3",
-				"Test code 3.4",
-				"Test code 3.5",
-				"Test code 3.6",
-				"Test code 3.7",
-				"Test code 3.8",
-				"Test code 3.9",
-				"Test code 3.10"
+				"Input recieved... Okay is an average emotional state.",
+				"Input recieved.  Okay is preferable to bad, but not as preferable as good.",
+				"Input recieved, emotional state recognized as 'okay'.  Just okay?"
 			};
-		String[] listCodeNeg1;
-		String[] listCodeNeg2;
-		String[] listCodeNeg3;
-		String[] listCodeNeg4;
-		String[] listGeneric;
+		//	"NOT BAD"
+		String[] listCode4 =
+			{
+				"Not bad is better than not good."
+			};
+		//	"NOT GOOD"
+		String[] listCodeNeg1 =
+			{
+				"Not good is less desirable than not bad, or even good."
+			};
+		//	"NOT GREAT"
+		String[] listCodeNeg2 =
+			{
+				"Not great is worse than not good.  Significantly worse than great."
+			};
+		//	"NOT OK" or "NOT OKAY"
+		String[] listCodeNeg3 =
+			{
+				"Oh no, what is wrong?"
+			};
+		//	"BAD"
+		String[] listCodeNeg4 =
+			{
+				""
+			};
+		//	"POOR" or "POORLY"
+		String[] listCodeNeg5 =
+			{
+				""
+			};
+		//	"SAD"
+		String[] listCodeNeg6 =
+			{
+				""
+			};
+		//	"MEH"
+		String[] listCodeNeg7 =
+			{
+				""
+			};
+		//	Code 0, no emotional trigger response word
+		String[] listGeneric =
+			{
+				""
+			};
 		
 		switch(code)
 		{
@@ -68,32 +106,54 @@ public class rb_First_Response
 				response = listCode3[rand.nextInt(listCode3.length)];
 				break;
 			}
+			case 4:
+			{
+				response = listCode4[rand.nextInt(listCode4.length)];
+				break;
+			}
 			case -1:
 			{
-				
+				response = listCodeNeg1[rand.nextInt(listCodeNeg1.length)];
 				break;
 			}
 			case -2:
 			{
+				response = listCodeNeg2[rand.nextInt(listCodeNeg2.length)];
 				break;
 			}
 			case -3:
 			{
-				
+				response = listCodeNeg3[rand.nextInt(listCodeNeg3.length)];
 				break;
 			}
 			case -4:
 			{
+				response = listCodeNeg4[rand.nextInt(listCodeNeg4.length)];
+				break;
+			}
+			case -5:
+			{
+				response = listCodeNeg5[rand.nextInt(listCodeNeg5.length)];
+				break;
+			}
+			case -6:
+			{
+				response = listCodeNeg6[rand.nextInt(listCodeNeg6.length)];
+				break;
+			}
+			case -7:
+			{
+				response = listCodeNeg7[rand.nextInt(listCodeNeg7.length)];
 				break;
 			}
 			case 0:
 			{
-				
+				response = listGeneric[rand.nextInt(listGeneric.length)];
 				break;
 			}
 			case -100:
 			{
-				
+				System.out.printf("Goodbye, Quenby!");
 				break;
 			}
 			default:

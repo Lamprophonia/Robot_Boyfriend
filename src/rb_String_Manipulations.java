@@ -14,21 +14,47 @@ public class rb_String_Manipulations
 		//	String array to split the sentence into individual words
 		String[] words;
 		
-		//	splitting the words by spaces
+		//	splitting the words by spaces, commas, periods, exclamation points, and question marks.
 		words = input.split(" |,|\\.|!|\\?");
 		
-		//	Label for breaking out of FOR loop 
+		//	Label for breaking out of FOR loop
 		outLoop:
 		for(i = 0; i < words.length; i++)
 		{
 			//	Switch statement where each case is a potential word to trigger a response code
 			switch(words[i].toUpperCase())
 			{
+				//	Case looking for a negative trigger word, which will then search a new switch
+				//	statement looking for the potential words that could come after it.
 				case "NOT":
 				{
 					switch(words[i + 1].toUpperCase())
 					{
+						//	Looks for a potential intermediate word, 'so'.
 						case "SO":
+						{
+							switch(words[i + 2].toUpperCase())
+							{
+								case "GOOD":
+								{
+									code = -1;
+									break outLoop;
+								}
+								case "GREAT":
+								{
+									code = -2;
+									break outLoop;
+								}
+								case "BAD":
+								{
+									code = 4;
+									break outLoop;
+								}
+							}
+							break;
+						}
+						//	Another potential intermediate word, 'too'.
+						case "TOO":
 						{
 							switch(words[i + 2].toUpperCase())
 							{
@@ -42,6 +68,11 @@ public class rb_String_Manipulations
 								{
 									System.out.printf("NOT SO GREAT\n");
 									code = -2;
+									break outLoop;
+								}
+								case "BAD":
+								{
+									code = 4;
 									break outLoop;
 								}
 							}
@@ -82,7 +113,6 @@ public class rb_String_Manipulations
 				}
 				case "GOOD":
 				{
-					System.out.print("Booga booga booga\n");
 					code = 1;
 					break outLoop;
 				}
