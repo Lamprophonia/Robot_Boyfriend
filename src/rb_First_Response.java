@@ -5,7 +5,7 @@ public class rb_First_Response
 	/**
 	 * 
 	 * @param code
-	 * @return the random response 
+	 * @return the random response
 	 */
 	public String codeResponse(int code)
 	{
@@ -22,9 +22,9 @@ public class rb_First_Response
 		//	"GOOD"
 		String[] listCode1 =
 			{
-				"Input recieved.  I am glad that you are good.  I am good as well.",
+				"Input recieved.  I am glad that you are good.",
 				"Input recieved.  It is good to be... good.",
-				"Good.  Good is good.  I am good.  It is good that we are both good.",
+				"Good.  Good is good.",
 				"Good is less than great, but greater than 'meh'.",
 				"Computing your condition... you have entered 'good'."
 			};
@@ -66,27 +66,27 @@ public class rb_First_Response
 		//	"BAD"
 		String[] listCodeNeg4 =
 			{
-				""
+				"Oh no!  I do not want you to be bad!"
 			};
 		//	"POOR" or "POORLY"
 		String[] listCodeNeg5 =
 			{
-				""
+				"Input recieved... it is unfortunate that you are not doing well."
 			};
 		//	"SAD"
 		String[] listCodeNeg6 =
 			{
-				""
+				"Input recieved... I do not like it when you are sad."
 			};
 		//	"MEH"
 		String[] listCodeNeg7 =
 			{
-				""
+				"Computing 'meh'... it would appear that you are too cool for the proverbial school."
 			};
 		//	Code 0, no emotional trigger response word
 		String[] listGeneric =
 			{
-				""
+				"I hope you are content with your current emotional state."
 			};
 		
 		switch(code)

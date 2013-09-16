@@ -15,7 +15,7 @@ public class rb_String_Manipulations
 		String[] words;
 		
 		//	splitting the words by spaces, commas, periods, exclamation points, and question marks.
-		words = input.split(" |,|\\.|!|\\?");
+		words = input.split(" |,|\\.|!");
 		
 		//	Label for breaking out of FOR loop
 		outLoop:
@@ -60,13 +60,11 @@ public class rb_String_Manipulations
 							{
 								case "GOOD":
 								{
-									System.out.printf("NOT SO GOOD\n");
 									code = -1;
 									break outLoop;
 								}
 								case "GREAT":
 								{
-									System.out.printf("NOT SO GREAT\n");
 									code = -2;
 									break outLoop;
 								}
@@ -168,9 +166,29 @@ public class rb_String_Manipulations
 	}
 	
 	/**
+	 * Function that reads the input string and determines whether the user asked a
+	 * non-redundant question.
+	 * @param input
+	 * @return boolean determining whether or not the user asked a question
+	 */
+	public boolean question(String input)
+	{
+		boolean question = false;
+		String[] words = input.split(" ");
+		
+		for(int i = 0; i < words.length; i++)
+		{
+			System.out.printf("I am as good as can be expected, for a robot.  Beep boop!\n");
+		}
+		
+		
+		return question;
+	}
+	
+	/**
 	 * Private function that prompts the user to end the program
 	 * @param code
-	 * @return the response codeIO go
+	 * @return the response code
 	 */
 	public int cont(int code)
 	{
