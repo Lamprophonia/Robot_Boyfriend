@@ -22,18 +22,18 @@ public class rb_String_Manipulations
 		for(i = 0; i < words.length; i++)
 		{
 			//	Switch statement where each case is a potential word to trigger a response code
-			switch(words[i].toUpperCase())
+			switch(words[i])
 			{
 				//	Case looking for a negative trigger word, which will then search a new switch
 				//	statement looking for the potential words that could come after it.
 				case "NOT":
 				{
-					switch(words[i + 1].toUpperCase())
+					switch(words[i + 1])
 					{
 						//	Looks for a potential intermediate word, 'so'.
 						case "SO":
 						{
-							switch(words[i + 2].toUpperCase())
+							switch(words[i + 2])
 							{
 								case "GOOD":
 								{
@@ -56,7 +56,7 @@ public class rb_String_Manipulations
 						//	Another potential intermediate word, 'too'.
 						case "TOO":
 						{
-							switch(words[i + 2].toUpperCase())
+							switch(words[i + 2])
 							{
 								case "GOOD":
 								{
@@ -129,6 +129,11 @@ public class rb_String_Manipulations
 					code = 3;
 					break outLoop;
 				}
+				case "FINE":
+				{
+					code = 5;
+					break outLoop;
+				}
 				case "BAD":
 				{
 					code = -4;
@@ -154,6 +159,46 @@ public class rb_String_Manipulations
 					code = -7;
 					break outLoop;
 				}
+				case "SHIT":
+				{
+					code = -8;
+					break outLoop;
+				}
+				case "SHITTY":
+				{
+					code = -8;
+					break outLoop;
+				}
+				case "POOP":
+				{
+					code = -9;
+					break outLoop;
+				}
+				case "POOPS":
+				{
+					code = -9;
+					break outLoop;
+				}
+				case "POOPY":
+				{
+					code = -9;
+					break outLoop;
+				}
+				case "CRAP":
+				{
+					code = -10;
+					break outLoop;
+				}
+				case "CRAPPY":
+				{
+					code = -10;
+					break outLoop;
+				}
+				case "DEPRESSED":
+				{
+					code = -11;
+					break outLoop;
+				}
 				default:
 				{
 					code = 0;
@@ -174,13 +219,8 @@ public class rb_String_Manipulations
 	public boolean question(String input)
 	{
 		boolean question = false;
-		String[] words = input.split(" ");
 		
-		for(int i = 0; i < words.length; i++)
-		{
-			System.out.printf("I am as good as can be expected, for a robot.  Beep boop!\n");
-		}
-		
+		System.out.printf("I am as good as can be expected, for a robot.  Beep boop!\n");
 		
 		return question;
 	}

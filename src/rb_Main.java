@@ -24,9 +24,10 @@ public class rb_Main
 		boolean question;
 		int code = 0, count = 0;
 		Scanner in = new Scanner(System.in);
-		String input, response;
+		String input, inputTemp, response;
 		
 		//	Creating class objects
+		rb_Intro objIntro = new rb_Intro();
 		rb_String_Manipulations objStringManip = new rb_String_Manipulations();
 		rb_First_Response firstResponse = new rb_First_Response();
 		rb_Early_Response earlyResponse = new rb_Early_Response();
@@ -38,8 +39,9 @@ public class rb_Main
 //			Initial prompt
 			System.out.printf("\nHello Quenby.  How are you?\n");
 					
-			//Waits for the user's input
-			input = in.nextLine();
+			//Waits for the user's input, then converts it to all caps
+			inputTemp = in.nextLine();
+			input = inputTemp.toUpperCase();
 			
 			/*
 			 * 		IF statements to send the program to different classes based on the length
@@ -67,21 +69,18 @@ public class rb_Main
 			//	Call to the code finding function within the string manipulation class
 			code = objStringManip.responseCodeFinder(input);
 			
-			if(input.contains("?"))
-			{
-				//	Call to the function that determines if the user asked a non-redundant question
-				question = objStringManip.question(input);
-			}
-			
 			//	Call to the function that will return a response based on the response code
 			response = firstResponse.codeResponse(code);
-			
 			
 			//	Printing out the response
 			System.out.printf("%s\n", response);
 			count++;
 			
-			
+			if(input.contains("YOU?"))
+			{
+				//	Call to the function that determines if the user asked a non-redundant question
+				question = objStringManip.question(input);
+			}
 			
 			//	Calling the function to prompt the user to continue every 5 responses
 			if(count % 5 == 0)

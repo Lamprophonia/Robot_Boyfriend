@@ -1,0 +1,3 @@
+Input recieved... Okay is an average emotional state.
+Input recieved.  Okay is preferable to bad, but not as preferable as good.
+Input recieved, emotional state recognized as 'okay'.  Just okay?

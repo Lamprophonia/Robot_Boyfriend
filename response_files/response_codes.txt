@@ -2,6 +2,7 @@
 2 = GREAT
 3 = OK or OKAY
 4 = NOT BAD
+5 = FINE
 
 -1 = NOT GOOD
 -2 = NOT GREAT
@@ -10,3 +11,7 @@
 -5 = POOR or POORLY
 -6 = SAD
 -7 = MEH
+-8 = SHIT or SHITTY
+-9 = POOP or POOPY or POOPS
+-10 = CRAP or CRAPPY
+-11 = DEPRESSED

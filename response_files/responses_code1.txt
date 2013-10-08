@@ -1,0 +1,5 @@
+Input recieved.  I am glad that you are good.
+Input recieved.  It is good to be... good.
+Good.  Good is good.
+Good is less than great, but greater than 'meh'.
+Computing your condition... you have entered 'good'.
