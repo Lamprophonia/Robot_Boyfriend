@@ -3,8 +3,8 @@
  */
 
 //	Imports and global variables
-import java.util.Scanner;
-import java.util.Random;
+import java.util.*;
+import javax.swing.JFrame;
 
 /**
  * Main class
@@ -31,6 +31,14 @@ public class rb_Main
 		rb_String_Manipulations objStringManip = new rb_String_Manipulations();
 		rb_First_Response firstResponse = new rb_First_Response();
 		rb_Early_Response earlyResponse = new rb_Early_Response();
+		//	Calls the GUI method
+		rb_GUI objGUI = new rb_GUI();
+		//	Tells the program how to close the program by default
+		objGUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//	Establishes size of the window
+		objGUI.setSize(500, 300);
+		//	Sets the visibility of the window to be true (visible)
+		objGUI.setVisible(true);
 		
 		//	WHILE loop to maintain the initial prompt until the response code becomes -100
 		while(exit == false)
